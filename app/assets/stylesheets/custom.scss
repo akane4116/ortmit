@@ -1,0 +1,33 @@
+h1, h2 {
+    font-weight: 100;
+}
+
+.text-black {
+    color: ff6347;
+} 
+
+.btn-black {
+    color: ff6347;
+    border: 1px solid #ff6347;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    background-color: white;
+
+  &:hover {
+     color: #ff6347;
+  }
+}
+
+.top-hero-container {
+    padding-top: 220px;
+    h1 {
+        font-size: 56px;
+        margin-bottom: 20px;
+    }
+    
+    h2 {
+        margin-bottom: 60px;
+    }
+}
+
