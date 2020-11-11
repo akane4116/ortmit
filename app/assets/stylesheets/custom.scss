@@ -3,11 +3,11 @@ h1, h2 {
     font-family: 'Alegreya Sans SC', sans-serif;
 }
 
-.text-black {
+.text-white {
     color: ff6347;
 } 
 
-.btn-black {
+.btn-white {
     color: ff6347;
     border: 1px solid #ff6347;
     padding-top: 15px;
@@ -30,5 +30,22 @@ h1, h2 {
     h2 {
         margin-bottom: 60px;
     }
+}
+
+.form-control {
+    height: 45px;
+}
+
+.users-new-wrapper {
+    width: 100vw;
+    height: 100vh;
+    
+   .users-new-container {
+       padding-top: 220px;
+       
+       .form-group {
+           margin-bottom: 20px;
+       }
+   }
 }
 
