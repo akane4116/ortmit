@@ -36,7 +36,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap-sass'
-gem 'devise'
 gem 'bcrypt'
 
 group :development, :test do
@@ -62,3 +61,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+
+gem 'devise'
