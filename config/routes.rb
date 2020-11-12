@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'sessions/new'
   
-  root 'pages#index'
+  root 'sessions#index'
   get 'pages/help'
   
   resources :users
