@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
   
   
-  #devise_for :users
-  get 'pages/index'
-  get 'pages/show'
-  get 'users/new'
-  get 'sessions/new'
-  get 'resource/sign_up'
+  devise_for :users
+ 
   
-  root 'sessions#index'
+  root 'users#sign_in'
   get 'pages/help'
   
   resources :users

@@ -1,5 +1,12 @@
 class ApplicationController < ActionController::Base
-  before_action :require_login
+  before_action :authenticate_user!
+  
+  private
+  
+  def require_login
+    
+    redirect_to sessions_new_url
+  end
   
   
   protect_from_forgery with: :exception
