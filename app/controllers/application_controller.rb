@@ -4,8 +4,10 @@ class ApplicationController < ActionController::Base
   private
   
   def require_login
-    
+   unless logged_in?
+     flash[:error] = "ログインが必要です"
     redirect_to sessions_new_url
+   end 
   end
   
   

@@ -1,39 +1,39 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+     super
+  end
 
   # POST /resource
-  # def create
-  #  @user = User.new(user_params)
-  #  if @user.save
-  #    redirect_to root_path, success: '登録完了'
-  #  else
-  #    flash.now[:danger] = "登録失敗"
-  #    render :new
-  #  end
-  # end
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to root_path, success: '登録完了'
+    else
+      flash.now[:danger] = "登録失敗"
+      render :new
+    end
+  end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+   def edit
+     super
+   end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+   def update
+     super
+   end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+   def destroy
+     super
+   end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -66,8 +66,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   
-  #  private
-  #def user_params
-  #  params.require(:user).permit(:name,:email)
-  #end
+    private
+  def user_params
+    params.require(:user).permit(:name,:email)
+  end
 end
