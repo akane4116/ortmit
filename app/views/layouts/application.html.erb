@@ -21,11 +21,12 @@
             <span><%= image_tag "人物アイコン.png", class:"navbar-brand" %></span>
             <% end %>
             <ul class="nav navbar-nav navbar-right">
-              <% if logged_in? %>
+              <% if current_user %>
                 <li>
                  <%= link_to "#" do %>
                   <%= image_tag "メモアイコン.png" %>
                  <% end %>
+              <% end %>
                 </li>
                <li>
                  <%= link_to "#" do %>
