@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  get 'invitations/users'
   devise_for :users
  
   
