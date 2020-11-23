@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
   
+  get 'topics/new'
   get 'invitations/users'
+  
   devise_for :users
  
   
@@ -9,6 +11,14 @@ Rails.application.routes.draw do
   #get 'pages/help'
   
   resources :users
+  
+ get '/login',  to: 'sessions#new'
+ post '/login',  to: 'sessions#create'
+ delete '/logout', to: 'sessions#destroy'
+ 
+  
+  resources :topics
+  
   
   #get '/login',  to: 'sessions#new'
   #post '/login',  to: 'sessions#create'

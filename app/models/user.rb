@@ -10,4 +10,6 @@ class User < ApplicationRecord
          invite_for: 24.hours
          
   has_secure_password
+  
+  has_many :topics
 end

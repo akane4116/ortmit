@@ -23,7 +23,8 @@ class Users::SessionsController < Devise::SessionsController
   end
   
   def destroy
-    super
+    log_out
+    redirect_to root_url, info:'ログアウト'
   end
   
   private

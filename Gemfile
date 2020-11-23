@@ -71,3 +71,6 @@ gem 'devise_invitable'
 gem 'omniauth-google-oauth2'
 
 gem 'bcrypt'
+
+gem "carrierwave"
+
