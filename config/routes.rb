@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   
+  resources :answers
+  resources :questions
   get 'topics/new'
   get 'invitations/users'
   
