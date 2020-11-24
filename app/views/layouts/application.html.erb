@@ -17,27 +17,39 @@
     <nav class= "navbar navbar-default navbar-fixed-top navbar-transparent">
      <div class="container">
         <ul class="nav navbar-nav navbar-left">
-         <%= link_to root_path do %>
-          <%= image_tag "mushi.png" %>
-         <% end %>
-         <%= link_to questions_path do %>
-          <%= image_tag "q.png" %>
-         <% end %>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
           <li>
-           <%= link_to  new_user_registration_path do %>
-            <%= image_tag "fixed.png" %>
+           <%= link_to root_path do %>
+             <%= image_tag "b.top.png" %>
            <% end %>
           </li>
-            <li>
+          <li>
+           <%= link_to questions_path do %>
+             <%= image_tag "b.q.png" %>
+           <% end %>
+          </li>
+          <li>
+           <%= link_to  new_user_registration_path do %>
+            <%= image_tag "b.fixed.png" %>
+           <% end %>
+          </li>
+          <li>
             <%= link_to new_topic_path do %>
-             <%= image_tag "filebox.png" %>
+             <%= image_tag "b.pencil.png" %>
             <% end %>
           </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do%>
-             <%= image_tag "home.png"  %>
+             <%= image_tag "b.exit.png"  %>
+            <% end %>
+          </li>
+           <li>
+            <%= link_to new_topic_path do %>
+             <%= image_tag "b.folder.png" %>
+            <% end %>
+          </li>
+            <li>
+            <%= link_to new_user_invitation_path do %>
+             <%= image_tag "b.email.png" %>
             <% end %>
           </li>
         </ul>
