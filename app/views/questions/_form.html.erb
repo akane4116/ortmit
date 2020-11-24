@@ -1,32 +1,34 @@
-<%= form_with(model: question, local: true) do |form| %>
-  <% if question.errors.any? %>
+<% if question.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
-
+      <h2><%= pluralize(question.errors.count, "error") %> 
+        prohibited this question from being saved:</h2>
       <ul>
       <% question.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_area :title %>
+<% end %>
+  
+<%= form_for(question) do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class:"form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_area :name %>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :content, rows:5, class:"form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :finished %>
-    <%= form.check_box :finished %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class:"form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <%= f.hidden_field :finished, { value:false } %>
+
+  <div>
+    <%= f.submit %>
   </div>
 <% end %>

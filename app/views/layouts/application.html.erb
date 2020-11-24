@@ -16,18 +16,12 @@
     
     <nav class= "navbar navbar-default navbar-fixed-top navbar-transparent">
      <div class="container">
-      <ul>
-       <li>
          <%= link_to root_path do %>
          <span><%= image_tag "mushi.png", class: "navbar-brand" %></span>
         <% end %>
-       </li>
-       <li>
         <%= link_to questions_path do %>
-         <%= image_tag "q.png", class: "navbar-brand" %>
+         <span><%= image_tag "q.png", class: "navbar-brand" %></span>
         <% end %>
-       </li>
-      </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
            <%= link_to  new_user_registration_path do %>
