@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_071306) do
+ActiveRecord::Schema.define(version: 2020_11_24_024010) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "question_id"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_071306) do
     t.boolean "finished"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "content"
   end
 
   create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,7 +54,8 @@ ActiveRecord::Schema.define(version: 2020_11_23_071306) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
-    t.string "password_digest"
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

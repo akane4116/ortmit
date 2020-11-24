@@ -6,10 +6,9 @@ class User < ApplicationRecord
   
   
   devise :invitable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
+         :recoverable, :rememberable, :validatable, :omniauthable,
          invite_for: 24.hours
          
-  has_secure_password
   
   has_many :topics
 end
