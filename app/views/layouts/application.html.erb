@@ -16,12 +16,14 @@
     
     <nav class= "navbar navbar-default navbar-fixed-top navbar-transparent">
      <div class="container">
+        <ul class="nav navbar-nav navbar-left">
          <%= link_to root_path do %>
-         <span><%= image_tag "mushi.png", class: "navbar-brand" %></span>
-        <% end %>
-        <%= link_to questions_path do %>
-         <span><%= image_tag "q.png", class: "navbar-brand" %></span>
-        <% end %>
+          <%= image_tag "mushi.png" %>
+         <% end %>
+         <%= link_to questions_path do %>
+          <%= image_tag "q.png" %>
+         <% end %>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
            <%= link_to  new_user_registration_path do %>
@@ -38,7 +40,7 @@
              <%= image_tag "home.png"  %>
             <% end %>
           </li>
-      </ul>
+        </ul>
     </div>
   </nav>
     
