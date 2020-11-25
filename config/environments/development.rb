@@ -54,7 +54,12 @@ Rails.application.configure do
   
   #config.web_console.whitelisted_ips = '122.133.91.149'
   
-  config.action_mailer.delivery_method = :letter_opener
+  
   config.action_mailer.delivery_method = :letter_opener_web
   
+  config.action_mailer.default_url_options = { host: 'f0a98a97738c4c998a9d88db0bfdaa86.vfs.cloud9.ap-northeast-1.amazonaws.com' }
+
+  config.force_ssl = true
+  
 end
+
