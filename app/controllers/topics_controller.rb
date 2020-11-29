@@ -1,28 +1,44 @@
 class TopicsController < ApplicationController
-  
   def index
-    @topics = Topic.all
+    @topics = Topic.all.includes(:favorite_users)
+    @comment = Comment.new
   end
-     
+  
+  
   def new
     @topic = Topic.new
   end
   
+  
+  def show
+    @topic = Topic.find(params[:id])
+    @comments = @topic.comments
+    @comment = current_user.comments.new
+  end
+  
   def create
-  @topic = current_user.topics.new(topic_params)
+    @topic = current_user.topics.new(topic_params)
+    
+    if @topic.save
+      redirect_to topics_path, success: '投稿に成功しました'
+    else
+      flash.now[:danger] = "投稿に失敗しました"
+      render :new
+    end
+  end
+
+  def update
+    redirect_to topic_path
+  end
   
-   if @topic.save
-    redirect_to topics_path, success: '投稿完了'
-   else
-    flash.now[:danger] = "投稿失敗"
-    render :new
-   end
+  def destroy
+    redirect_to topic_path
   end
   
   
-  private
+ private
   def topic_params
-    params.require(:topic).permit(:image, :description)
+   params.require(:topic).permit(:image, :description)
   end
-  
+ 
 end

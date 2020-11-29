@@ -2,5 +2,10 @@
 
 <%= render 'form', question: @question %>
 
+<%= form_with model: @user do |form| %>
+  <%= form.text_area :user_name, id:"user_name" %>
+  <%= form.submit "更新" %>
+<% end %>
+
 <%= link_to 'Show', @question %> |
 <%= link_to 'Back', questions_path %>

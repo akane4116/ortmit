@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :questions
   get 'topics/new'
   get 'invitations/users'
+  post "questions/:id/update:" => "post#update"
   
   devise_for :users
  
