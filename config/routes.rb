@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   resources :questions
   get 'topics/new'
   get 'invitations/users'
-  post "questions/:id/update:" => "post#update"
+  post "questions/:id/update:" => "questions#update"
+  get 'favorites/index'
+  post '/favorites', to: 'favorites#create'
+  get 'saves/index'
+  post '/saves', to: 'saves#create'
   
   devise_for :users
  
@@ -15,7 +19,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :topics
-  
+
  get '/login',  to: 'sessions#new'
  post '/login',  to: 'sessions#create'
  delete '/logout', to: 'sessions#destroy'
