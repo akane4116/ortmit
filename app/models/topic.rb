@@ -6,6 +6,7 @@ class Topic < ApplicationRecord
     belongs_to :user
     has_many :favorites
     has_many :saves
+    has_many :comments
     
     mount_uploader :image, ImageUploader
 end
