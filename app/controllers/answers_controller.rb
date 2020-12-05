@@ -38,7 +38,7 @@ class AnswersController < ApplicationController
           q.finished = true
           q.save
         end
-        format.html { redirect_to '/questions/:id' + @answer.question_id.to_s}
+        format.html { redirect_to '/questions' + @answer.question_id.to_s}
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }
