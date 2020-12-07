@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   post '/favorites', to: 'favorites#create'
   get 'saves/index'
   post '/saves', to: 'saves#create'
-  get 
   
   devise_for :users
  
