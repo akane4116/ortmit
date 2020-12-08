@@ -21,7 +21,7 @@
             <%= link_to saves_path(topic_id: topic.id) do %>
             <%= image_tag 'b.memory.png', class: 'topic-index-icon' %>
             <% end %>
-            <%= link_to comments_path(topic_id: topic.id) do %>
+            <%= link_to new_comment_path(topic_id: topic.id) do %>
             <%= image_tag 'b.comment.png', class: 'topic-index-icon' %>
             <% end %>
            <p class="topic-text">
