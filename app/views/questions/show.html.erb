@@ -27,10 +27,10 @@
 <h3 class="h4 text-primary">回答一覧</h3>
 
 <ul class="list-group">
-<% if @question.answer.count == 0 then %>
+<% if @question.answers.count == 0 then %>
   <p class="answer">回答はありません</p>
 <% else %>
-  <% @question.answer.reverse_each do |re| %>
+  <% @question.answers.reverse_each do |re| %>
    <li class="list-group-item">
      <%= re.content + '(' + re.name + ')' %>
    </li>

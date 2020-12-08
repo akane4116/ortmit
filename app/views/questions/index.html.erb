@@ -16,6 +16,7 @@
     <% @questions.each do |question| %>
       <tr>
         <td><%= question.title %></td>
+        <td><%= question.name %></td>
         <td><%= question.finished ? '終了' : '受付中' %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
