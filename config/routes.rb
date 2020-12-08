@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :questions
   get 'topics/new'
   get 'invitations/users'
-  post "questions/:id/update:" => "questions#update"
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'
   get 'saves/index'
@@ -25,8 +24,6 @@ Rails.application.routes.draw do
  post '/login',  to: 'sessions#create'
  delete '/logout', to: 'sessions#destroy'
  
-  
-  resources :topics
   
   
   #get '/login',  to: 'sessions#new'

@@ -137,3 +137,12 @@ h1, h2 {
     }
   }
 }
+
+.footer {
+    background-color: rgbe(0,0,0,0.5);
+    padding: 5rem 0;
+}
+
+.content {
+    min-height: 700px;
+}

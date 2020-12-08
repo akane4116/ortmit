@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="display-4 text-primary">質疑応答</h1>
+<h1 class="display-4 text-center">質疑応答</h1>
 
 <table class="table mt-5 mb-5">
   <thead>
@@ -20,7 +20,7 @@
         <td><%= question.finished ? '終了' : '受付中' %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

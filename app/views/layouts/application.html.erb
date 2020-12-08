@@ -13,7 +13,8 @@
     <% flash.each do |key,value| %>
      <div class="alert alert-<%= key %>" role="alert"><%=value %></div>
     <% end %>
-    
+   
+   <header> 
     <nav class= "navbar navbar-default navbar-fixed-top navbar-transparent">
      <div class="container">
         <ul class="nav navbar-nav navbar-left">
@@ -63,10 +64,16 @@
            <% end %>
           </li>
         </ul>
+       </div>
+      </nav>
+    </header>
+        <%= yield %>
+        
+    <div class="footer">
+        <div class="container">
+            footer
+        </div>
     </div>
-  </nav>
-    
-    <%= yield %>
     
     <script>
       $(function(){

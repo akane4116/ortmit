@@ -21,7 +21,11 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
-    redirect_to '/questions'
+    @question = Question.find_by(id:params[:id])
+    @question.title = params[:title]
+    @question.content = params[:content]
+    @question.name = params[:name]
+    @question.save
   end
 
   # POST /questions
@@ -40,22 +44,15 @@ class QuestionsController < ApplicationController
     end
   end
   
-  def edit
-    @question = Question.find_by(id: params[:id])
-  end
 
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
-    @question = Question.find_by(id: params[:id])
-    @question.update(title: params[:title])
-    redirect_to '/questions'
   end
 
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
-    redirect_to '/questions'
   end
 
 
