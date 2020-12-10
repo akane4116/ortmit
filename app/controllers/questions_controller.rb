@@ -44,15 +44,21 @@ class QuestionsController < ApplicationController
     end
   end
   
-
+binding.pry
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
+    if @question.update(question_params)
+      redirect_to question_path
+    end
   end
 
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
+    if @question.destroy
+      redirect_to question_path
+    end
   end
 
 
@@ -61,7 +67,7 @@ class QuestionsController < ApplicationController
     def set_question
       @question = Question.find(params[:id])
     end
-
+  
     # Only allow a list of trusted parameters through.
     def question_params
       params.require(:question).permit(:title, :content, :name, :finished)
