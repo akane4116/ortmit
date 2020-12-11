@@ -38,7 +38,7 @@ class AnswersController < ApplicationController
           q.finished = true
           q.save
         end
-        format.html { redirect_to '/questions' + @answer.question_id.to_s}
+        format.html { redirect_to questions_path(@answer.question_id)}
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }
@@ -50,7 +50,9 @@ class AnswersController < ApplicationController
   # PATCH/PUT /answers/1
   # PATCH/PUT /answers/1.json
   def update
-    redirect_to '/questions'
+    if @answer.update(update_params)
+      redirect_to answer_path(@answer)
+    end
   end
 
   # DELETE /answers/1

@@ -22,10 +22,6 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
     @question = Question.find_by(id:params[:id])
-    @question.title = params[:title]
-    @question.content = params[:content]
-    @question.name = params[:name]
-    @question.save
   end
 
   # POST /questions
@@ -44,7 +40,7 @@ class QuestionsController < ApplicationController
     end
   end
   
-binding.pry
+
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
@@ -56,7 +52,7 @@ binding.pry
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
-    if @question.destroy
+    if @question.destroy(question_params)
       redirect_to question_path
     end
   end
