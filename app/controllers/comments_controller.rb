@@ -1,4 +1,4 @@
-class CommentController < ApplicationController
+class CommentsController < ApplicationController
     def index
         @topic = Topic.find_by(:params[topic_id])
     end

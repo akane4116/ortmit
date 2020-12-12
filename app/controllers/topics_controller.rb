@@ -11,7 +11,7 @@ class TopicsController < ApplicationController
   
   
   def show
-    @topic = Topic.find(params[:id])
+    @topics = Topic.find(params[:id])
     @comments = @topic.comments
     @comment = current_user.comments.new
   end
