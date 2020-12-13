@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   resources :questions
   get 'topics/new'
   get 'invitations/users'
-  get 'favorites/index'
-  post '/favorites', to: 'favorites#create'
   get 'saves/index'
   post '/saves', to: 'saves#create'
   
