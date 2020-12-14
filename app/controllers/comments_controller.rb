@@ -11,9 +11,10 @@ class CommentsController < ApplicationController
     
     def create
         @topic = Topic.find(params[:topic_id])
-        @commemt = @topic.comments.new(comment_params)
-        @comment.user_id = current_user.id
-        @comment.content = params[:comment][:content]
+        @commemt = @topic.comments.create(comment_params.merge(user_id: current_user.id))
+       # @comment.user_id = current_user.id
+        #@comment.content = params[:comment][:content]
+        redirect_to topic_path(@topic)
     end
     
     def destroy
@@ -23,6 +24,5 @@ class CommentsController < ApplicationController
     private
      def comment_params
         params.require(:comment).permit(:name,:content)
-        
      end
 end
