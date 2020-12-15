@@ -49,12 +49,13 @@ class QuestionsController < ApplicationController
     end
   end
 
+
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
-    if @question.destroy(question_params)
-      redirect_to question_path
-    end
+    question = Question.find(params[:id])
+    question.destroy
+    redirect_to question_path
   end
 
 
@@ -66,6 +67,7 @@ class QuestionsController < ApplicationController
   
     # Only allow a list of trusted parameters through.
     def question_params
-      params.require(:question).permit(:title, :content, :name, :finished)
+      params.permit(:title, :content, :name, :finished)
+      #params.require(:question).permit(:title, :content, :name, :finished)
     end
 end
