@@ -15,4 +15,6 @@ class User < ApplicationRecord
   has_many :favorite_topics, through: :favorites, source:'topic'
   has_many :saves
   has_many :comments
+  
+
 end

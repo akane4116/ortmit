@@ -1,6 +1,6 @@
 class SavesController < ApplicationController
   def index
-    @save_topics = current_user.save_topics
+    @save_topics = current_user.saves.new(topic_id: params[:topic_id])
   end
 
   def create
