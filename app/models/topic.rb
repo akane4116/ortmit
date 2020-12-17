@@ -5,7 +5,7 @@ class Topic < ApplicationRecord
     
     belongs_to :user
     has_many :favorites
-    has_many :saves
+    has_many :memories
     has_many :comments
     has_many :favorite_users, through: :favorites, source: 'user'
     

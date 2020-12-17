@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 2020_12_03_130617) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "memories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title"
     t.text "name"
@@ -45,13 +52,6 @@ ActiveRecord::Schema.define(version: 2020_12_03_130617) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "content"
-  end
-
-  create_table "saves", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "topic_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

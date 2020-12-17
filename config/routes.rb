@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :questions
   get 'topics/new'
   get 'invitations/users'
-  get 'saves/index'
-  post '/saves', to: 'saves#create'
+  get 'memories/index'
+  post '/memories', to: 'memories#create'
   
   devise_for :users
  
