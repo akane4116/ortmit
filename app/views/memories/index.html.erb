@@ -1,6 +1,6 @@
 <div class="topic-index-wrapper">
   <div class="container">
-    <% @save_topics.each do |topic| %>
+    <% @memory_topics.each do |topic| %>
      <div class="row">
        <div class="col-md-6 col-md-offset-3">
          <div class="topic-index-single">
@@ -12,9 +12,9 @@
            <p class="topic-text">
               <%= topic.description %>
              </p>
-               <% end %>
          </div>
        </div> 
      </div>
     <% end %> 
   </div>
+</div>

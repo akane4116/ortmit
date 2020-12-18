@@ -13,4 +13,3 @@ class MemoriesController < ApplicationController
     end
   end
 end
-

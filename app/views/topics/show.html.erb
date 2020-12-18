@@ -18,7 +18,7 @@
                  <% end %>
                 <% end %>
                    <%= topic.favorite_users.count %>
-                 <%= link_to saves_path(topic_id: topic.id) do %>
+                 <%= link_to memories_path(topic_id: topic.id) do %>
                  <%= image_tag 'b.memory.png', class: 'topic-index-icon' %>
                  <% end %>
                  <%= link_to new_topic_comment_path(topic_id: topic.id) do %>
