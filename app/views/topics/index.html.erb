@@ -11,23 +11,25 @@
             <% if !topic.favorite_users.include?(current_user) %>
              <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
               <%= image_tag 'b.like.png', class: 'topic-index-icon' %>
-            <% end %>
+             <% end %>
             <% else %>
              <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
              <%= image_tag 'b.like.png', class: 'topic-index-icon-red' %>
+             <% end %>
             <% end %>
-           <% end %>
              <%= topic.favorite_users.count %>
+           <% if !topic.memory_users.include?(current_user) %>
             <%= link_to memories_path(topic_id: topic.id), method: :post do %>
             <%= image_tag 'b.memory.png', class: 'topic-index-icon' %>
             <% end %>
-            <% else %>
+           <% else %>
             <%= link_to memories_path(topic_id: topic.id), method: :delete do %>
             <%= image_tag 'b.memory.png', class: 'topic-index-icon-red' %>
             <% end %>
+           <% end %>
             <%= link_to new_topic_comment_path(topic_id: topic.id) do %>
             <%= image_tag 'b.comment.png', class: 'topic-index-icon' %>
-            <% end %>
+           <% end %>
            <p class="topic-text">
                <%= topic.description %>
              </p>

@@ -12,4 +12,11 @@ class MemoriesController < ApplicationController
     redirect_to topics_path
     end
   end
+  
+  def destroy
+    @memory_topics = current_user.memories.find_by(topic_id:params[:topic_id])
+     if @memory_topics.destroy
+      redirect_to topics_path
+     end
+  end
 end
