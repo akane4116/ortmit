@@ -53,8 +53,8 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
-    question = Question.find(params[:id])
-    question.destroy
+    @question = Question.find(params[:id])
+    @question.destroy
     redirect_to question_path
   end
 

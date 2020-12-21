@@ -1,0 +1,2 @@
+module MyfolderHelper
+end
