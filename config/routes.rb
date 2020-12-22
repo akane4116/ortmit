@@ -19,10 +19,13 @@ Rails.application.routes.draw do
    resources :comments
   end
   
-  
+ 
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'
   delete '/favorites', to: 'favorites#destroy'
+  
+  #get 'myfolders/index'
+  #delete '/myfolders', to: 'myfolders#destroy'
 
  get '/login',  to: 'sessions#new'
  post '/login',  to: 'sessions#create'
