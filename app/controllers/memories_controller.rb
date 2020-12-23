@@ -1,6 +1,7 @@
 class MemoriesController < ApplicationController
   def index
-    @memory_topics = current_user.memories.new(topic_id: params[:topic_id])
+    #@memory_topics = current_user.memory_topics
+    @memory_topics = current_user.memories
   end
 
   def create

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'invitations/users'
   get 'memories/index'
   post '/memories', to: 'memories#create'
+  delete '/memories', to: 'memories#destroy'
   
   devise_for :users
  
@@ -24,8 +25,8 @@ Rails.application.routes.draw do
   post '/favorites', to: 'favorites#create'
   delete '/favorites', to: 'favorites#destroy'
   
-  #get 'myfolders/index'
-  #delete '/myfolders', to: 'myfolders#destroy'
+  get 'myfolders/index'
+  delete '/myfolders', to: 'myfolders#destroy'
 
  get '/login',  to: 'sessions#new'
  post '/login',  to: 'sessions#create'

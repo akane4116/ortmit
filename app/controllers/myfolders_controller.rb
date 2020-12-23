@@ -1,7 +1,8 @@
 class MyfoldersController < ApplicationController
     
     def index
-     @topics = Topic.all.current_user
+     # ログインユーザーの投稿を表示させる
+     @topics = current_user.topics
      @comment = Comment.new
     end
     
