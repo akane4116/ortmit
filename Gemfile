@@ -49,6 +49,7 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'spring-commands-rspec'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -81,3 +82,4 @@ gem 'bcrypt'
 
 gem "carrierwave"
 
+gem 'fog-aws'
