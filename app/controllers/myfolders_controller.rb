@@ -1,5 +1,6 @@
 class MyfoldersController < ApplicationController
     
+    
     def index
      # ログインユーザーの投稿を表示させる
      @topics = current_user.topics
