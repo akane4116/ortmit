@@ -7,7 +7,9 @@
            <h2 class="topic-author">
              <%= memory.user.name %>
            </h2>
-           <%= image_tag memory.topic.image.url %>
+             <% if memory.topic.image.present? %>
+             <%= image_tag memory.topic.image.url %>
+             <% end %>
            <%= image_tag 'b.memory.png', class:'topic-index-icon' %>
            <p class="topic-text">
               <%= memory.topic.description %>
