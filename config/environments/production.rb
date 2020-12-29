@@ -97,7 +97,7 @@ Rails.application.configure do
  #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
    app_password: Rails.application.credentials.gmail[:app_password],
  #パスワードをBase64でエンコード
-   authentication => :plain,
+   authentication: :plain,
  }
   
   config.require_master_key = true
