@@ -94,9 +94,9 @@ Rails.application.configure do
   domain: 'gmail.com',
   port:587,
   #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
-  user_name: Rails.application.credentials.gmail[:mail_address],
+  mail_address: Rails.application.credentials.gmail[:mail_address],
   #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
-  password: Rails.application.credentials.gmail[:app_password],
+  app_password: Rails.application.credentials.gmail[:app_password],
   #パスワードをBase64でエンコード
   authentication: :login
   }
