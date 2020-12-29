@@ -55,11 +55,23 @@ Rails.application.configure do
   #config.web_console.whitelisted_ips = '122.133.91.149'
   
   
-  config.action_mailer.delivery_method = :letter_opener_web
+  config.action_mailer.delivery_method = :smtp
   
-  config.action_mailer.default_url_options = { host: 'f0a98a97738c4c998a9d88db0bfdaa86.vfs.cloud9.ap-northeast-1.amazonaws.com' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  config.force_ssl = true
+ config.action_mailer.smtp_settings = {
+ address:"smtp.gmail.com",
+ domain: 'gmail.com',
+ port:587,
+ #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
+ user_name: Rails.application.credentials.gmail[:user_name],
+ #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
+ password: Rails.application.credentials.gmail[:password],
+ #パスワードをBase64でエンコード
+  authentication: :login
+ }
+ 
+config.force_ssl = true
   
 end
 
